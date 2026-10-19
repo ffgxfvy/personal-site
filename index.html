@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金仁杰 · 具身智能 / 强化学习 / 控制算法</title>
+<meta name="description" content="自动化 → 具身智能 / 强化学习 / 控制算法。LeRobot + ACT 机械臂模仿学习、离线强化学习、两篇 EI 会议论文（第一作者）。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <span class="brand">金仁杰</span>
+    <nav>
+      <a href="#projects">项目</a>
+      <a href="#publications">论文与荣誉</a>
+      <a href="#skills">技能</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>金仁杰</h1>
+    <p class="tagline">
+      自动化毕业，即将进入天津大学仪器科学与技术专业攻读学硕。<br>
+      在做的是 <strong>具身智能</strong> · <strong>强化学习</strong> · <strong>控制与优化</strong>，
+      擅长把算法落到真实硬件上。
+    </p>
+    <p class="meta">
+      中国石油大学（北京）克拉玛依校区 → 天津大学 纳电子科学与芯片工程学院
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="https://github.com/ffgxfvy">GitHub</a>
+      <a class="btn" href="mailto:ffgxfvy5562@163.com">邮箱</a>
+      <a class="btn" href="assets/resume.pdf">简历 PDF</a>
+    </div>
+  </div>
+</div>
+<section id="projects">
+  <div class="wrap">
+    <h2>精选项目</h2>
+    <p class="sub">三个主线项目 —— 算法深度、方向热度、以及"能不能落到硬件上"。</p>
+
+    <div class="projects">
+
+      <article class="card">
+        <img class="thumb" src="assets/img/rl-evolution.png"
+             alt="三代离线强化学习策略的得分对比">
+        <div class="body">
+          <h3>工业控制策略的离线强化学习</h3>
+          <div class="stat-row">
+            <div class="stat"><div class="v">6.22 → 30.44</div><div class="k">评测得分</div></div>
+            <div class="stat"><div class="v">100</div><div class="k">随机种子</div></div>
+          </div>
+          <p>
+            同一任务迭代四版策略：单帧 MLP → 手工时序特征 → 帧堆叠历史观测 →
+            <strong>TCN 时序卷积网络</strong>。分数提升 4.9 倍，状态误差降低 3.2 倍。
+            每版都跑满 100 个种子做评测。
+          </p>
+          <div class="tags">
+            <span>PyTorch</span><span>CQL</span><span>TCN</span><span>离线 RL</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/ffgxfvy/offline-rl-industrial-control">仓库</a>
+            <a href="https://github.com/ffgxfvy/offline-rl-industrial-control/blob/main/docs/iterations.md">迭代记录</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="thumb" src="assets/img/lerobot-cover.png"
+             alt="工业仪表擦拭机械臂项目海报">
+        <div class="body">
+          <h3>工业仪表擦拭机械臂的模仿学习</h3>
+          <div class="stat-row">
+            <div class="stat"><div class="v">201</div><div class="k">示教 episode</div></div>
+            <div class="stat"><div class="v">8 类</div><div class="k">工况设计</div></div>
+          </div>
+          <p>
+            用 <strong>LeRobot + ACT</strong> 做双相机端到端模仿学习，让六自由度机械臂学会
+            "抓海绵 → 定位仪表 → 判断污渍 → 擦拭 → 复位"。
+            本地示教 → AutoDL 云端训练 → 实机部署 → 失败样本回溯微调，形成完整闭环。
+          </p>
+          <div class="tags">
+            <span>具身智能</span><span>ACT</span><span>模仿学习</span><span>LeRobot</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/ffgxfvy/lerobot-act-wiping-arm">仓库</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb placeholder">2023 &amp; 2025 两届电赛 · 视觉伺服云台</div>
+        <div class="body">
+          <h3>电赛视觉伺服云台（两届）</h3>
+          <div class="stat-row">
+            <div class="stat"><div class="v">1.2 mm</div><div class="k">巡迹误差</div></div>
+            <div class="stat"><div class="v">183 ms</div><div class="k">响应时间</div></div>
+          </div>
+          <p>
+            2023 年 E 题用 <strong>K230 + 舵机云台</strong>做运动目标追踪（LAB 阈值分割 +
+            Blob 检测，三功能按键状态机）；2025 年 E 题用 TI MSPM0G3507 做自行瞄准装置
+            （8 路光电阵列 PID 循迹 + K230 视觉瞄准），获新疆赛区二等奖。
+          </p>
+          <div class="tags">
+            <span>K230 CanMV</span><span>STM32</span><span>PID</span><span>视觉伺服</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/ffgxfvy/eec-auto-aiming-car">仓库</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="sub" style="margin-top:26px">其他仓库</p>
+    <div class="card"><div class="body" style="padding:16px 16px">
+      <p style="margin:0">
+        <a href="https://github.com/ffgxfvy/math-modeling-portfolio">math-modeling-portfolio</a> ·
+        四次建模竞赛（MILP / GA+PSO / MDP / 分布鲁棒优化 / XGBoost / KNN / 生存分析 / Transformer-LSTM）<br>
+        <a href="https://github.com/ffgxfvy/quadrotor-fosm-ipso">quadrotor-fosm-ipso</a> ·
+        四旋翼分数阶滑模轨迹跟踪 + 改进 PSO（EI 论文一）<br>
+        <a href="https://github.com/ffgxfvy/fuzzy-pid-ipso-temperature-control">fuzzy-pid-ipso-temperature-control</a> ·
+        模糊 PID 温度控制 + Levy 飞行改进 PSO（EI 论文二）<br>
+        <a href="https://github.com/ffgxfvy/k230-edge-vision-demo">k230-edge-vision-demo</a> ·
+        K230 边缘视觉伺服工具箱（46 个离线可跑的测试）<br>
+        <a href="https://github.com/ffgxfvy/embedded-lab-collection">embedded-lab-collection</a> ·
+        51 单片机 / 蓝桥杯 / 8051 汇编 / STM32 练习<br>
+        <a href="https://github.com/ffgxfvy/p2p-file-sync">p2p-file-sync</a> ·
+        局域网 P2P 文件同步（UDP 发现 + TCP 传输 + SHA-256 校验 + 断点续传）
+      </p>
+    </div></div>
+  </div>
+</section>
+<section id="publications">
+  <div class="wrap">
+    <h2>论文与荣誉</h2>
+    <p class="sub">按时间倒序。</p>
+    <ul class="timeline">
+      <li>
+        <span class="when">2026</span>
+        <span class="what">
+          <strong>EI 会议论文：四旋翼分数阶滑模轨迹跟踪控制</strong><em>第一作者</em>
+          <span class="note">基于改进粒子群优化的控制器参数整定；含 4 组对比仿真与鲁棒性测试。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2026</span>
+        <span class="what">
+          <strong>EI 会议论文：模糊 PID 温度控制策略</strong><em>第一作者</em>
+          <span class="note">引入 Levy 飞行改进 PSO；配置了敏感性实验与消融对比。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2025</span>
+        <span class="what">
+          <strong>中国大学生计算机设计大赛</strong><em>国家二等奖</em>
+          <span class="note">微课《驼铃声·戍边情》，独立完成视频制作与教学脚本。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2025</span>
+        <span class="what">
+          <strong>第十七届蓝桥杯（单片机设计与开发）</strong><em>国家三等奖</em>
+          <span class="note">新疆赛区一等奖。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2025</span>
+        <span class="what">
+          <strong>全国大学生电子设计竞赛</strong><em>新疆赛区二等奖</em>
+          <span class="note">E 题简易自行瞄准装置，项目负责人。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2024–2025</span>
+        <span class="what">
+          <strong>全国大学生数学建模竞赛 / 统计建模大赛</strong><em>赛区一等奖 ×2 · 二等奖 ×2</em>
+          <span class="note">四次参赛，方法从 AHP-熵权法演进到 Transformer 混合模型。</span>
+        </span>
+      </li>
+      <li>
+        <span class="when">2023–2024</span>
+        <span class="what">
+          <strong>国家奖学金</strong><em>综合排名 8/107</em>
+          <span class="note">连续两年获评"三好学生标兵""科技创新先进个人"。</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section id="skills">
+  <div class="wrap">
+    <h2>技能</h2>
+    <p class="sub">按"能不能拿出证据"来分类。</p>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>机器学习 / 强化学习</h4>
+        <ul>
+          <li>PyTorch 训练与调参，含离线 RL（CQL）与序列模型（GRU / TCN）</li>
+          <li>模仿学习与具身智能：LeRobot + ACT 动作分块，双相机多模态输入</li>
+          <li>树模型与时序：XGBoost、K-means、VAR、Transformer-LSTM 混合模型</li>
+          <li>实验方法论：消融实验、多种子评测、不确定性量化（分位数回归、Bland-Altman）</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>控制与优化</h4>
+        <ul>
+          <li>滑模控制、分数阶控制、模糊 PID、卡尔曼/姿态解算</li>
+          <li>元启发式优化：PSO 及其改进（Levy 飞行、非线性权重衰减）</li>
+          <li>MILP 建模、马尔可夫决策过程、分布鲁棒优化</li>
+          <li>MATLAB / Simulink 建模仿真与控制器整定</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>嵌入式与硬件</h4>
+        <ul>
+          <li>单片机：51 / STM32 / STC32G / MSPM0G3507，C 与 8051 汇编</li>
+          <li>外设驱动：I2C、SPI、单总线、UART（含自定义 CRC 帧协议）、PWM、ADC</li>
+          <li>K230 CanMV 视觉伺服：LAB 阈值分割、Blob 检测、云台闭环</li>
+          <li>硬件调试：示波器、电源纹波、传感器标定、机电联调</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>软件工程</h4>
+        <ul>
+          <li>Python 工程化：包结构、类型注解、pytest 测试、GitHub Actions CI</li>
+          <li>网络编程：socket、UDP 广播、TCP、自定义线协议设计</li>
+          <li>工具链：Git、Linux、conda / pip 依赖治理、云 GPU（AutoDL）训练</li>
+          <li>文档与表达：技术报告、复现指南、论文写作与审稿意见回复</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="wrap">
+    <h2>联系方式</h2>
+    <p class="sub">欢迎交流具身智能、强化学习或嵌入式视觉相关的问题。</p>
+    <p>
+      邮箱：<a href="mailto:ffgxfvy5562@163.com">ffgxfvy5562@163.com</a><br>
+      GitHub：<a href="https://github.com/ffgxfvy">github.com/ffgxfvy</a><br>
+      简历：<a href="assets/resume.pdf">PDF 下载</a>
+    </p>
+
+    <details>
+      <summary>补充：课程基础与综合素质</summary>
+      <ul>
+        <li>《自动控制原理》实验：状态空间建模、传递函数互换（ss / ss2tf / tf2ss）、
+          series / parallel / feedback 结构代数、连续系统离散化（c2d）</li>
+        <li>《微机原理及应用》：8051 汇编四实验（LED / 蜂鸣器 / 数码管动态扫描 / 键盘行列扫描）</li>
+        <li>《计算机网络与通信》：socket 编程实验 + 小组 P2P 文件同步项目</li>
+        <li>核心课程成绩：高等数学 A(I) 100、计算机辅助绘图 99、计算机网络与通信 96、
+          计算机控制系统 94、电机及电力拖动基础 94、微机原理 93</li>
+        <li>其他：累计志愿服务 183.5 小时；连续三年参加克拉玛依马拉松；羽毛球 / 乒乓球</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 金仁杰</span>
+    <span>本页为静态站点，由 GitHub Pages 托管</span>
+  </div>
+</footer>
+
+</body>
+</html>
