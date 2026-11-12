@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="LAN P2P File Sync Architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d131c"/>
+      <stop offset="100%" stop-color="#172233"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g stroke="#243247" stroke-width="1" opacity="0.6">
+    <path d="M0 72H640M0 144H640M0 216H640M0 288H640M128 0V360M256 0V360M384 0V360M512 0V360"/>
+  </g>
+  <rect x="44" y="42" width="164" height="84" rx="12" fill="#131c29" stroke="#38bdf8" stroke-width="1.6"/>
+  <text x="126" y="76" fill="#e6edf3" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" text-anchor="middle">UDP Peer Discovery</text>
+  <text x="126" y="102" fill="#9aa7b4" font-family="Consolas, monospace" font-size="12" text-anchor="middle">Broadcast + Heartbeat</text>
+
+  <rect x="238" y="42" width="164" height="84" rx="12" fill="#131c29" stroke="#60a5fa" stroke-width="1.6"/>
+  <text x="320" y="76" fill="#e6edf3" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" text-anchor="middle">TCP Chunk Stream</text>
+  <text x="320" y="102" fill="#9aa7b4" font-family="Consolas, monospace" font-size="12" text-anchor="middle">.part Offset Resume</text>
+
+  <rect x="432" y="42" width="164" height="84" rx="12" fill="#131c29" stroke="#34d399" stroke-width="1.6"/>
+  <text x="514" y="76" fill="#e6edf3" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" text-anchor="middle">SHA-256 Digest Gate</text>
+  <text x="514" y="102" fill="#9aa7b4" font-family="Consolas, monospace" font-size="12" text-anchor="middle">Atomic Commit &amp; Safe Path</text>
+
+  <path d="M208 84H238M402 84H432" stroke="url(#accent)" stroke-width="2.5" stroke-dasharray="5 3"/>
+
+  <rect x="44" y="162" width="552" height="154" rx="14" fill="#101824" stroke="#28374d" stroke-width="1.4"/>
+  <text x="68" y="196" fill="#38bdf8" font-family="Consolas, monospace" font-size="13" font-weight="700">VERIFIED ENGINEERING CONTRACT</text>
+  <rect x="68" y="216" width="148" height="74" rx="10" fill="#162131" stroke="#2e405a"/>
+  <text x="142" y="248" fill="#e6edf3" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" text-anchor="middle">90 Passed</text>
+  <text x="142" y="272" fill="#9aa7b4" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">pytest Unit &amp; Integration</text>
+
+  <rect x="246" y="216" width="148" height="74" rx="10" fill="#162131" stroke="#2e405a"/>
+  <text x="320" y="248" fill="#34d399" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Traversal Guard</text>
+  <text x="320" y="272" fill="#9aa7b4" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">POSIX/Win Path Sanitized</text>
+
+  <rect x="424" y="216" width="148" height="74" rx="10" fill="#162131" stroke="#2e405a"/>
+  <text x="498" y="248" fill="#60a5fa" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" text-anchor="middle">Zero-Dep Stdlib</text>
+  <text x="498" y="272" fill="#9aa7b4" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">Python Socket + CI Matrix</text>
+</svg>
